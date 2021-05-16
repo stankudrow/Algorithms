@@ -1,0 +1,99 @@
+{
+    "meta": {
+        "version": "5.5",
+        "timestamp": "2021-05-16T14:30:50.120779",
+        "branch_coverage": true,
+        "show_contexts": false
+    },
+    "files": {
+        "binary_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                14,
+                35,
+                36,
+                37,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                46,
+                47,
+                50,
+                72,
+                92,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                103
+            ],
+            "summary": {
+                "covered_lines": 26,
+                "num_statements": 26,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 12,
+                "num_partial_branches": 0,
+                "covered_branches": 12,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "test_binary_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                14,
+                16,
+                17,
+                18,
+                21,
+                23,
+                24,
+                25,
+                26,
+                28,
+                31,
+                33,
+                34,
+                35
+            ],
+            "summary": {
+                "covered_lines": 18,
+                "num_statements": 18,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 4,
+                "num_partial_branches": 0,
+                "covered_branches": 4,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        }
+    },
+    "totals": {
+        "covered_lines": 44,
+        "num_statements": 44,
+        "percent_covered": 100.0,
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 16,
+        "num_partial_branches": 0,
+        "covered_branches": 16,
+        "missing_branches": 0
+    }
+}

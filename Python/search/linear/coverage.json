@@ -1,0 +1,88 @@
+{
+    "meta": {
+        "version": "5.5",
+        "timestamp": "2021-05-16T14:33:47.559537",
+        "branch_coverage": true,
+        "show_contexts": false
+    },
+    "files": {
+        "linear_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                14,
+                29,
+                30,
+                31,
+                32,
+                35,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57
+            ],
+            "summary": {
+                "covered_lines": 15,
+                "num_statements": 15,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 10,
+                "num_partial_branches": 0,
+                "covered_branches": 10,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "test_linear_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                14,
+                16,
+                17,
+                18,
+                21,
+                23,
+                24,
+                25,
+                26,
+                28,
+                31,
+                33,
+                34,
+                35
+            ],
+            "summary": {
+                "covered_lines": 18,
+                "num_statements": 18,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 4,
+                "num_partial_branches": 0,
+                "covered_branches": 4,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        }
+    },
+    "totals": {
+        "covered_lines": 33,
+        "num_statements": 33,
+        "percent_covered": 100.0,
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0
+    }
+}
