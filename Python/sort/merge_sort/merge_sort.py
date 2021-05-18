@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge algorithm module."""
+"""Merge sort algorithm module."""
 
 
-from typing import Sequence
+from typing import List, Sequence, Union
 
 
-# Complexity: best avg  worst
-# Time:       Ω(n) Ө(n) O(n)
-# Space:      Ω(1) Ө(1) O(1)
+# Complexity: worst case
+# Time      : O(n)
+# Space     : O(1)
 
 
 # a subrountine for mergesort function
-def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
+def merge(seq1: Sequence, seq2: Sequence) -> List:
     """
     Merge two sorted sequences into the new sorted one.
 
@@ -23,7 +23,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
 
     Returns
     -------
-    Sequence
+    List
         sorted sequence from input ones merged.
 
     """
@@ -41,7 +41,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    #mseq += seq1[ind1:] + seq2[ind2:]  # only for lists
+    # mseq += seq1[ind1:] + seq2[ind2:]  # only for lists
     while ind1 < len1:
         mseq.append(seq1[ind1])
         ind1 += 1
@@ -51,29 +51,31 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
     return mseq
 
 
-# Complexity: best avg  worst
-# Time:       Ω(1) Ө(n*log_2(n)) O(n*log_2(n))
-# Space:      Ω(1) Ө(1) O(1)
+# Complexity: worst case
+# Time      : O(n*log_2(n))
+# Space     : O(n)
 
 
-def merge_sort(seq: Sequence) -> Sequence:
+def merge_sort(seq: Sequence) -> Union[Sequence, List]:
     """
-    Sort sequence via merging.
+    Break sequence recursively into halves and merge them.
 
     Parameters
     ----------
     seq : Sequence
-        sequence to sort
+        sequence to sort.
 
     Returns
     -------
+    List
+        the sorted sequence.
+    Sequence:
+        if the provided sequence initially was 0 <= len(seq) <= 1
     """
     leng = len(seq)
     if leng <= 1:
         return seq
-    else:
-        half = leng // 2
-        left = seq[:half]
-        right = seq[half:]
+    half = leng // 2
+    left = seq[:half]
+    right = seq[half:]
     return merge(merge_sort(left), merge_sort(right))
-

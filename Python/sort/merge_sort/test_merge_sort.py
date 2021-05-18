@@ -1,66 +1,78 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge test module"""
+"""Merge sort test module"""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import List
+from pytest import mark, param
 
 from merge_sort import merge, merge_sort
 
+
 # pylint: disable=arguments-out-of-order
 
-def test_merge_empties():
+
+@mark.parametrize("seq, res", [([], []), ("", []), ((), [])])
+def test_merge_empties(seq, res):
     """Empty sequences."""
-    seq1: List = []
-    seq2: List = []
-    assert merge(seq1, seq2) == []
+    assert merge(seq, seq) == res
 
 
-def test_merge_single_element_sequence():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [([5], [2], [2, 5]), ("b", "a", ["a", "b"]), ((4,), (1,), [1, 4])],
+)
+def test_merge_single_element_sequence(seq1, seq2, res):
     """Single element sequences."""
-    seq1: List = [5]
-    seq2: List = [10]
-    res: List = [5, 10]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
 
 
-def test_merge_two_sequences_of_equal_lengths():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [
+        ([3, 5], [2, 4], [2, 3, 4, 5]),
+        ("br", "egg", ["b", "e", "g", "g", "r"]),
+        (param((4, 1, 6), (1, 7, 2), [1, 1, 2, 4, 6, 7], marks=mark.xfail)),
+    ],
+)
+def test_merge_sequences_of_equal_lengths(seq1, seq2, res):
     """Two sorted sequences of equal length."""
-    seq1: List = [1, 3, 5]
-    seq2: List = [2, 3, 4]
-    res: List = [1, 2, 3, 3, 4, 5]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
 
 
-def test_merge_two_sequences_of_unequal_lengths():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [
+        ([3, 5, 7], [2, 4], [2, 3, 4, 5, 7]),
+        ("br", "abcd", ["a", "b", "b", "c", "d", "r"]),
+        (param((4, 1, 6), (7, 2), [1, 2, 4, 6, 7], marks=mark.xfail)),
+    ],
+)
+def test_merge_sequences_of_unequal_lengths(seq1, seq2, res):
     """Two sorted sequences of unequal length."""
-    seq1: List = [1, 4, 7]
-    seq2: List = [-1, 2, 3, 4, 6, 10]
-    res: List = [-1, 1, 2, 3, 4, 4, 6, 7, 10]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
 
 
-def test_merge_sort_empty_sequence():
+@mark.parametrize("seq, res", [([], []), ("", ""), ((), ())])
+def test_merge_sort_empty_sequence(seq, res):
     """Sort empty sequence."""
-    assert merge_sort([]) == []
+    assert merge_sort(seq) == res
 
-def test_merge_sort_single_element_sequence():
+
+@mark.parametrize("seq, res", [([1], [1]), ("1", "1"), ((1,), (1,))])
+def test_merge_sort_single_element_sequence(seq, res):
     """Sort single element sequence."""
-    seq: List = [5]
-    assert merge_sort(seq) == seq
+    assert merge_sort(seq) == res
 
-def test_merge_sort_two_elements_sequence():
-    """Sort two elements sequence."""
-    seq: List = [5, 2]
-    assert merge_sort(seq) == seq[::-1]
 
-def test_merge_sort_sequence():
-    """Sort single element sequence."""
-    seq: List = list(range(10))
-    assert merge_sort(seq) == seq
+@mark.parametrize(
+    "seq", [[3, 6, 3, 1, 8], (-1, 7, -3, 6, 3), "qwerty"],
+)
+def test_merge_sort_sequence(seq):
+    """Sort arbitrary sequences."""
+    assert merge_sort(seq) == sorted(seq)

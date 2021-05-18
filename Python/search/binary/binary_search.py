@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Binary search module."""
+"""Binary search algorithm module."""
 
 
 from typing import Any, Optional, Sequence
 
 
-# Complexity: best avg  worst
-# Time:       Ω(1) Ө(n) O(n)
-# Space:      Ω(1) Ө(1) O(1)
+# Complexity
+# Time      : O( log_2(n) )
+# Space     : O(1) for iterative and O( log_2(n) ) for recursive version.
 
 
 def ibinary_search(seq: Sequence, value: Any) -> Optional[int]:
-    """Iterative binary search.
+    """
+    Iterative binary search.
 
     Notes
     -----
@@ -70,7 +71,8 @@ def rbinary_search(seq: Sequence, value: Any) -> Optional[int]:
     """
 
     def rbins(seq: Sequence, val: Any, low: int, high: int) -> Optional[int]:
-        """Recursive implementation itself
+        """
+        Recursive implementation itself
 
         Parameters
         ----------

@@ -6,7 +6,7 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import List
+from typing import Generator, List
 
 from pytest import raises
 
@@ -22,7 +22,7 @@ def test_ienumerate_empty() -> None:
 
 def test_ienumerate_successive():
     """A successive enumeration of a sequence."""
-    seq = range(10)
+    seq: Generator = range(10)
     start = -3
     for tup1, tup2 in zip(ienumerate(seq, start), enumerate(seq, start)):
         assert tup1 == tup2

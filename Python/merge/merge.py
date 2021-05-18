@@ -6,9 +6,9 @@
 from typing import Sequence
 
 
-# Complexity: best avg  worst
-# Time:       Ω(n) Ө(n) O(n)
-# Space:      Ω(1) Ө(1) O(1)
+# Complexity
+# Time      : O(n)
+# Space     : O(m)
 
 
 # a subrountine for mergesort function
@@ -41,7 +41,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    #mseq += seq1[ind1:] + seq2[ind2:]  # only for lists
+    # mseq += seq1[ind1:] + seq2[ind2:]  # only for lists
     while ind1 < len1:
         mseq.append(seq1[ind1])
         ind1 += 1
@@ -49,4 +49,3 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
         mseq.append(seq2[ind2])
         ind2 += 1
     return mseq
-

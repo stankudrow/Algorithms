@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Linear search module."""
+"""Linear search algorithm module."""
 
 
 from typing import Any, Optional, Sequence
 
 
-# Complexity: best avg  worst
-# Time:       Ω(1) Ө(n) O(n)
-# Space:      Ω(1) Ө(1) O(1)
+# Complexity
+# Time      : O(n)
+# Space     : O(1) for iterative and O(n) for recursive version.
 
 
 def ilinear_search(seq: Sequence, value: Any) -> Optional[int]:
-    """Iterative linear search.
+    """
+    Iterative linear search.
 
     Parameters
     ----------

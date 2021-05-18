@@ -6,41 +6,54 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import List
+from pytest import mark, param
 
 from merge import merge
 
+
 # pylint: disable=arguments-out-of-order
 
-def test_merge_empties():
+
+@mark.parametrize("seq, res", [([], []), ("", []), ((), [])])
+def test_merge_empties(seq, res):
     """Empty sequences."""
-    seq1: List = []
-    seq2: List = []
-    assert merge(seq1, seq2) == []
+    print(seq, res)
+    assert merge(seq, seq) == res
 
 
-def test_merge_single_element():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [([5], [2], [2, 5]), ("b", "a", ["a", "b"]), ((4,), (1,), [1, 4])],
+)
+def test_merge_single_element_sequence(seq1, seq2, res):
     """Single element sequences."""
-    seq1: List = [5]
-    seq2: List = [10]
-    res: List = [5, 10]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
 
 
-def test_merge_two_sequences_of_equal_lengths():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [
+        ([3, 5], [2, 4], [2, 3, 4, 5]),
+        ("br", "egg", ["b", "e", "g", "g", "r"]),
+        (param((4, 1, 6), (1, 7, 2), [1, 1, 2, 4, 6, 7], marks=mark.xfail)),
+    ],
+)
+def test_merge_sequences_of_equal_lengths(seq1, seq2, res):
     """Two sorted sequences of equal length."""
-    seq1: List = [1, 3, 5]
-    seq2: List = [2, 3, 4]
-    res: List = [1, 2, 3, 3, 4, 5]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
 
 
-def test_merge_two_sequences_of_unequal_lengths():
+@mark.parametrize(
+    "seq1, seq2, res",
+    [
+        ([3, 5, 7], [2, 4], [2, 3, 4, 5, 7]),
+        ("br", "abcd", ["a", "b", "b", "c", "d", "r"]),
+        (param((4, 1, 6), (7, 2), [1, 2, 4, 6, 7], marks=mark.xfail)),
+    ],
+)
+def test_merge_sequences_of_unequal_lengths(seq1, seq2, res):
     """Two sorted sequences of unequal length."""
-    seq1: List = [1, 4, 7]
-    seq2: List = [-1, 2, 3, 4, 6, 10]
-    res: List = [-1, 1, 2, 3, 4, 4, 6, 7, 10]
     assert merge(seq1, seq2) == res
     assert merge(seq2, seq1) == res
