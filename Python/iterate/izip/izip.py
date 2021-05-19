@@ -6,7 +6,7 @@
 from typing import Any, Generator, Iterable, Tuple
 
 
-# Complexity
+# Complexity: worst case
 # Time      : O(n)
 # Space     : O(m)
 
@@ -34,7 +34,7 @@ def izip(*iterables: Iterable) -> Generator[Tuple[Any, ...], None, None]:
     """
     # make from iterables iterators
     iters = [iter(iter_) for iter_ in iterables]
-    while iters:  # until exhausted
+    while iters:  # until exhausted if all are of equal length
         res = []
         for iter_ in iters:
             elem = next(iter_, None)

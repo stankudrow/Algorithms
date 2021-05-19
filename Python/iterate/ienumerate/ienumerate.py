@@ -6,7 +6,7 @@
 from typing import Any, Generator, Iterable, Tuple
 
 
-# Complexity
+# Complexity: worst case
 # Time      : O(n)
 # Space     : O(1)
 

@@ -6,7 +6,7 @@
 from typing import Any, Optional, Sequence
 
 
-# Complexity
+# Complexity: worst case
 # Time      : O( log_2(n) )
 # Space     : O(1) for iterative and O( log_2(n) ) for recursive version.
 

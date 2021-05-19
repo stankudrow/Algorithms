@@ -6,7 +6,7 @@
 from typing import Sequence
 
 
-# Complexity
+# Complexity: worst case
 # Time      : O(n)
 # Space     : O(m)
 

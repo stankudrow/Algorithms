@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Linear search algorithm test module."""
+"""Linear search test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
