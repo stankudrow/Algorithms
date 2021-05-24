@@ -3,6 +3,9 @@
 """Merge algorithm module."""
 
 
+__author__ = "Stanislav D. Kudriavtsev"
+
+
 from typing import Sequence
 
 

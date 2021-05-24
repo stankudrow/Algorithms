@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-19T21:17:37.639003",
+        "timestamp": "2021-05-23T14:15:05.465027",
         "branch_coverage": true,
         "show_contexts": false
     },
@@ -10,10 +10,8 @@
             "executed_lines": [
                 3,
                 6,
-                14,
-                31,
-                32,
-                33,
+                9,
+                17,
                 34,
                 35,
                 36,
@@ -23,11 +21,14 @@
                 40,
                 41,
                 42,
-                43
+                43,
+                44,
+                45,
+                46
             ],
             "summary": {
-                "covered_lines": 16,
-                "num_statements": 16,
+                "covered_lines": 17,
+                "num_statements": 17,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -71,8 +72,8 @@
         }
     },
     "totals": {
-        "covered_lines": 29,
-        "num_statements": 29,
+        "covered_lines": 30,
+        "num_statements": 30,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,

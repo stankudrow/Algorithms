@@ -3,6 +3,9 @@
 """Python zip function implementation module."""
 
 
+__author__ = "Stanislav D. Kudriavtsev"
+
+
 from typing import Any, Generator, Iterable, Tuple
 
 

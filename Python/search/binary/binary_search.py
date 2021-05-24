@@ -3,6 +3,9 @@
 """Binary search algorithm module."""
 
 
+__author__ = "Stanislav D. Kudriavtsev"
+
+
 from typing import Any, Optional, Sequence
 
 

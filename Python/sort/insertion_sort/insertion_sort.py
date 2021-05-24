@@ -3,6 +3,9 @@
 """Insertion sort algorithm module."""
 
 
+__author__ = "Stanislav D. Kudriavtsev"
+
+
 from typing import List, Sequence
 
 

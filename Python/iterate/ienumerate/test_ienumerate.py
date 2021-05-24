@@ -23,12 +23,14 @@ def test_ienumerate_empty() -> None:
 def test_ienumerate_successive():
     """A successive enumeration of a sequence."""
     seq: Generator = range(10)
-    start = -3
+    start: int = -3
     for tup1, tup2 in zip(ienumerate(seq, start), enumerate(seq, start)):
         assert tup1 == tup2
 
 
-def test_ienumerate_not_int_start():
-    """Raise TypeError on non-integer start."""
+def test_ienumerate_errors():
+    """Raise TypeError on non-integer start or non-iterable."""
     with raises(TypeError):
         next(ienumerate([2, 4], 0.8))
+    with raises(TypeError):
+        next(ienumerate(5, 5))

@@ -1,86 +1,84 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-25T00:15:25.969695",
+        "timestamp": "2021-05-25T00:15:10.198773",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "ienumerate.py": {
+        "ifilter.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
                 18,
-                46,
-                47,
                 48,
                 49,
                 50,
                 51,
-                52
+                53,
+                54
             ],
             "summary": {
-                "covered_lines": 11,
-                "num_statements": 11,
+                "covered_lines": 10,
+                "num_statements": 10,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 4,
+                "num_branches": 8,
                 "num_partial_branches": 0,
-                "covered_branches": 4,
+                "covered_branches": 8,
                 "missing_branches": 0
             },
             "missing_lines": [],
             "excluded_lines": []
         },
-        "test_ienumerate.py": {
+        "test_ifilter.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
-                11,
-                13,
-                16,
-                18,
+                10,
+                12,
+                14,
+                17,
                 19,
-                23,
-                25,
+                20,
+                21,
+                24,
                 26,
                 27,
                 28,
-                31,
-                33,
-                34,
-                35,
-                36
+                29,
+                32,
+                36,
+                38,
+                39
             ],
             "summary": {
-                "covered_lines": 18,
+                "covered_lines": 19,
                 "num_statements": 19,
-                "percent_covered": 91.30434782608695,
-                "missing_lines": 1,
+                "percent_covered": 95.65217391304348,
+                "missing_lines": 0,
                 "excluded_lines": 0,
                 "num_branches": 4,
                 "num_partial_branches": 1,
                 "covered_branches": 3,
                 "missing_branches": 1
             },
-            "missing_lines": [
-                20
-            ],
+            "missing_lines": [],
             "excluded_lines": []
         }
     },
     "totals": {
         "covered_lines": 29,
-        "num_statements": 30,
-        "percent_covered": 94.73684210526316,
-        "missing_lines": 1,
+        "num_statements": 29,
+        "percent_covered": 97.5609756097561,
+        "missing_lines": 0,
         "excluded_lines": 0,
-        "num_branches": 8,
+        "num_branches": 12,
         "num_partial_branches": 1,
-        "covered_branches": 7,
+        "covered_branches": 11,
         "missing_branches": 1
     }
 }
