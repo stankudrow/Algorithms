@@ -1,17 +1,49 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-23T14:14:14.261897",
+        "timestamp": "2021-07-12T20:52:11.948196",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "selection_sort.py": {
+        "iterative_selection_sort.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
                 17,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+            ],
+            "summary": {
+                "covered_lines": 13,
+                "num_statements": 13,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 6,
+                "num_partial_branches": 0,
+                "covered_branches": 6,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "recursive_selection_sort.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                17,
+                31,
+                33,
                 34,
                 35,
                 36,
@@ -20,11 +52,13 @@
                 39,
                 40,
                 41,
-                42
+                43,
+                44,
+                45
             ],
             "summary": {
-                "covered_lines": 13,
-                "num_statements": 13,
+                "covered_lines": 17,
+                "num_statements": 17,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -42,40 +76,56 @@
                 6,
                 9,
                 11,
-                17,
+                12,
                 18,
-                20,
-                23,
-                24,
+                19,
+                21,
+                22,
+                25,
                 26,
+                28,
                 29,
-                32,
-                34
+                30,
+                33,
+                34,
+                36,
+                37,
+                38,
+                41,
+                42,
+                44,
+                45,
+                46,
+                49,
+                52,
+                54
             ],
             "summary": {
-                "covered_lines": 13,
-                "num_statements": 13,
-                "percent_covered": 100.0,
-                "missing_lines": 0,
+                "covered_lines": 27,
+                "num_statements": 28,
+                "percent_covered": 96.42857142857143,
+                "missing_lines": 1,
                 "excluded_lines": 0,
                 "num_branches": 0,
                 "num_partial_branches": 0,
                 "covered_branches": 0,
                 "missing_branches": 0
             },
-            "missing_lines": [],
+            "missing_lines": [
+                55
+            ],
             "excluded_lines": []
         }
     },
     "totals": {
-        "covered_lines": 26,
-        "num_statements": 26,
-        "percent_covered": 100.0,
-        "missing_lines": 0,
+        "covered_lines": 57,
+        "num_statements": 58,
+        "percent_covered": 98.57142857142857,
+        "missing_lines": 1,
         "excluded_lines": 0,
-        "num_branches": 6,
+        "num_branches": 12,
         "num_partial_branches": 0,
-        "covered_branches": 6,
+        "covered_branches": 12,
         "missing_branches": 0
     }
 }

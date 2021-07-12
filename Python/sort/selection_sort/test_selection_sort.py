@@ -6,29 +6,50 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from pytest import mark
+from pytest import mark, param
 
-from selection_sort import selection_sort
+from iterative_selection_sort import iter_selection_sort as isort
+from recursive_selection_sort import rec_selection_sort as rsort
 
 
 # pylint: disable=arguments-out-of-order
 
 
 @mark.parametrize("seq, res", [([], []), ("", []), ((), [])])
-def test_selection_sort_empties(seq, res):
+def test_empty_sequences(seq, res):
     """Empty sequences."""
-    assert selection_sort(seq) == res
+    assert isort(seq) == res
+    assert rsort(seq) == res
 
 
 @mark.parametrize("seq", [[1], "1", (1,)])
-def test_selection_sort_single_element_sequence(seq):
-    """Sort single element sequence."""
-    assert selection_sort(seq) == list(seq)
+def test_single_element_sequence(seq):
+    """Single element sequences."""
+    res = list(seq)
+    assert isort(seq) == res
+    assert rsort(seq) == res
+
+
+@mark.parametrize("seq", [[-1, 1], (-2, 0, 2), "ABCxyz", "1234567"])
+def test_sorted_sequences(seq):
+    """Sorted sequences."""
+    res = list(seq)
+    assert isort(seq) == res
+    assert rsort(seq) == res
+
+
+@mark.parametrize("seq", [[1, 0], (2, -2, 0), "qwerty", "School42"])
+def test_unsorted_sequences(seq):
+    """Unsorted sequences."""
+    res = sorted(seq)
+    assert isort(seq) == res
+    assert rsort(seq) == res
 
 
 @mark.parametrize(
-    "seq", [[3, 6, 3, 1, 8], (-1, 7, -3, 6, 3), "qwerty"],
+    "nonseq", [param(42, marks=mark.xfail), param(None, marks=mark.xfail)]
 )
-def test_selection_sort_sequence(seq):
-    """Sort arbitrary sequences."""
-    assert selection_sort(seq) == sorted(seq)
+def test_nonsequences(nonseq):
+    """Non-sequences."""
+    assert isort(nonseq)
+    assert rsort(nonseq)

@@ -6,7 +6,7 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import List, Sequence, Union
+from typing import List, Sequence
 
 
 # Complexity: worst case
@@ -27,7 +27,6 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
     Returns
     -------
     List
-        sorted sequence from input ones merged.
 
     """
     ind1: int = 0
@@ -44,7 +43,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    # mseq += seq1[ind1:] + seq2[ind2:]  # only for lists
+    # mseq += seq1[ind1:] + seq2[ind2:]
     while ind1 < len1:
         mseq.append(seq1[ind1])
         ind1 += 1
@@ -59,26 +58,34 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
 # Space     : O(n)
 
 
-def merge_sort(seq: Sequence) -> Union[Sequence, List]:
+# merge function is meant to be pure
+# it would have been easier to make assignments in place
+# so this implementation is more expensive than classic one
+
+# this link provided some insights:
+# https://www.techiedelight.com/iterative-merge-sort-algorithm-bottom-up/
+
+def iter_merge_sort(seq: Sequence) -> List:
     """
-    Break sequence recursively into halves and merge them.
+    Iterative merge sort on a sequence.
 
     Parameters
     ----------
     seq : Sequence
-        sequence to sort.
 
     Returns
     -------
     List
-        the sorted sequence.
-    Sequence:
-        if the provided sequence initially was 0 <= len(seq) <= 1
+
     """
-    leng = len(seq)
-    if leng <= 1:
-        return seq
-    half = leng // 2
-    left = seq[:half]
-    right = seq[half:]
-    return merge(merge_sort(left), merge_sort(right))
+    length: int = len(seq)
+    size: int = 1
+    mseq: List = list(seq)  # to be merged
+    while size < length:
+        for lbound in range(0, length, 2 * size):
+            start: int = lbound
+            mid: int = start + size
+            end: int = min(start + 2*size, length)
+            mseq[start:end] = merge(mseq[start:mid], mseq[mid:end])
+        size *= 2
+    return mseq

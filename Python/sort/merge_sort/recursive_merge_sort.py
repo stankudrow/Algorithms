@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge algorithm module."""
+"""Merge sort algorithm module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Sequence
+from typing import List, Sequence
 
 
 # Complexity: worst case
 # Time      : O(n)
-# Space     : O(m)
+# Space     : O(1)
 
 
 # a subrountine for mergesort function
-def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
+def merge(seq1: Sequence, seq2: Sequence) -> List:
     """
-    Merge two sorted sequences into a new sorted one.
+    Merge two sorted sequences into the new sorted one.
 
     Parameters
     ----------
@@ -26,7 +26,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
 
     Returns
     -------
-    Sequence
+    List
 
     """
     ind1: int = 0
@@ -51,3 +51,30 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
         mseq.append(seq2[ind2])
         ind2 += 1
     return mseq
+
+
+# Complexity: worst case
+# Time      : O(n*log_2(n))
+# Space     : O(n)
+
+
+def rec_merge_sort(seq: Sequence) -> List:
+    """
+    Recursive merge sort on a sequence.
+
+    Parameters
+    ----------
+    seq : Sequence
+
+    Returns
+    -------
+    List
+
+    """
+    length: int = len(seq)
+    if length <= 1:
+        return list(seq)
+    half: int = length // 2
+    left: Sequence = seq[:half]
+    right: Sequence = seq[half:]
+    return merge(rec_merge_sort(left), rec_merge_sort(right))

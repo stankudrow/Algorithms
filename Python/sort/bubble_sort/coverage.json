@@ -1,17 +1,21 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-23T14:15:05.465027",
+        "timestamp": "2021-07-12T20:53:19.248123",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "bubble_sort.py": {
+        "iterative_bubble_sort.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
                 17,
+                30,
+                31,
+                32,
+                33,
                 34,
                 35,
                 36,
@@ -19,16 +23,11 @@
                 38,
                 39,
                 40,
-                41,
-                42,
-                43,
-                44,
-                45,
-                46
+                41
             ],
             "summary": {
-                "covered_lines": 17,
-                "num_statements": 17,
+                "covered_lines": 16,
+                "num_statements": 16,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -40,46 +39,94 @@
             "missing_lines": [],
             "excluded_lines": []
         },
+        "recursive_bubble_sort.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                17,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                41,
+                42,
+                43
+            ],
+            "summary": {
+                "covered_lines": 15,
+                "num_statements": 15,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 6,
+                "num_partial_branches": 0,
+                "covered_branches": 6,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
         "test_bubble_sort.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
                 11,
-                17,
+                12,
                 18,
-                20,
-                23,
-                24,
+                19,
+                21,
+                22,
+                25,
                 26,
+                28,
                 29,
-                32,
-                34
+                30,
+                33,
+                34,
+                36,
+                37,
+                38,
+                41,
+                42,
+                44,
+                45,
+                46,
+                49,
+                52,
+                54
             ],
             "summary": {
-                "covered_lines": 13,
-                "num_statements": 13,
-                "percent_covered": 100.0,
-                "missing_lines": 0,
+                "covered_lines": 27,
+                "num_statements": 28,
+                "percent_covered": 96.42857142857143,
+                "missing_lines": 1,
                 "excluded_lines": 0,
                 "num_branches": 0,
                 "num_partial_branches": 0,
                 "covered_branches": 0,
                 "missing_branches": 0
             },
-            "missing_lines": [],
+            "missing_lines": [
+                55
+            ],
             "excluded_lines": []
         }
     },
     "totals": {
-        "covered_lines": 30,
-        "num_statements": 30,
-        "percent_covered": 100.0,
-        "missing_lines": 0,
+        "covered_lines": 58,
+        "num_statements": 59,
+        "percent_covered": 98.63013698630137,
+        "missing_lines": 1,
         "excluded_lines": 0,
-        "num_branches": 8,
+        "num_branches": 14,
         "num_partial_branches": 0,
-        "covered_branches": 8,
+        "covered_branches": 14,
         "missing_branches": 0
     }
 }
