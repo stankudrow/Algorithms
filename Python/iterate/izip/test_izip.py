@@ -6,35 +6,22 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import List
-
-from pytest import mark
+from pytest import fixture
 
 from izip import izip
 
 
-def test_izip_empty_iterables():
-    """Empty iterables."""
-    seq: List = []
-    for tup1, tup2 in zip(izip(seq, seq), zip(seq, seq)):
-        assert tup1 == tup2
+# pylint: disable=redefined-outer-name
 
 
-def test_izip_single_element_iterables():
-    """Zip several single element iterables."""
-    seq1: List = [10]
-    seq2: List = [20]
-    assert list(izip(seq1, seq2)) == list(zip(seq1, seq2))
-    assert list(izip(seq2, seq1)) == list(zip(seq2, seq1))
+@fixture()
+def iterables():
+    """Iterables for izip."""
+    return [[], [0], [1, 0], [-1, 0, 1], "hello", (None, [None], {None})]
 
 
-@mark.parametrize(
-    'seq1, seq2',
-    [([], [1, 2]),
-     ([4], []),
-     (range(5), range(10))]
-)
-def test_izip_iterables(seq1, seq2):
+def test_iterables(iterables):
     """Zip several test cases."""
-    assert list(izip(seq1, seq2)) == list(zip(seq1, seq2))
-    assert list(izip(seq2, seq1)) == list(zip(seq2, seq1))
+    for it1 in iterables:
+        for it2 in iterables:
+            assert list(izip(it1, it2)) == list(zip(it1, it2))

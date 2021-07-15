@@ -6,31 +6,43 @@
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Generator, List
-
-from pytest import raises
+from pytest import mark, raises
 
 from ienumerate import ienumerate
 
 
-def test_ienumerate_empty() -> None:
+@mark.parametrize("seq", [[], (), "", {}])
+def test_empty_iterable(seq) -> None:
     """Empty iterables."""
-    seq: List = []
     for tup1, tup2 in zip(ienumerate(seq), enumerate(seq)):
         assert tup1 == tup2
 
 
-def test_ienumerate_successive():
-    """A successive enumeration of a sequence."""
-    seq: Generator = range(10)
-    start: int = -3
-    for tup1, tup2 in zip(ienumerate(seq, start), enumerate(seq, start)):
+def test_successive_iterable():
+    """Successive iterable."""
+    seq = range(-10, 10)
+    for tup1, tup2 in zip(ienumerate(seq), enumerate(seq)):
         assert tup1 == tup2
 
 
-def test_ienumerate_errors():
-    """Raise TypeError on non-integer start or non-iterable."""
+@mark.parametrize("seq, starts", [(range(10), [-2, 2, 10])])
+def test_start(seq, starts):
+    """Several starts for enumeration."""
+    seq = list(seq)
+    for start in starts:
+        for tup1, tup2 in zip(ienumerate(seq, start), enumerate(seq, start)):
+            assert tup1 == tup2
+
+
+@mark.parametrize("noniter", [None, 21, 4.2])
+def test_noniterable(noniter):
+    """TypeError on non-iterable."""
     with raises(TypeError):
-        next(ienumerate([2, 4], 0.8))
+        next(ienumerate(noniter))
+
+
+@mark.parametrize("start", [None, 4.2, []])
+def test_incorrect_start(start):
+    """TypeError on an incorrect start value."""
     with raises(TypeError):
-        next(ienumerate(5, 5))
+        next(ienumerate([21], start))

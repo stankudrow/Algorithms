@@ -15,6 +15,9 @@ from typing import Any, Callable, Generator, Iterable
 
 
 # Generator[yield_type, send_type, return_type]
+# https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
+
+
 def ifilter(
     function: Callable, iterable: Iterable, false: bool = False
 ) -> Generator[Any, None, None]:
@@ -23,7 +26,7 @@ def ifilter(
 
     Notes
     -----
-    false key does not make ifilter to work like itertools.filterfalse.
+    `false` key makes ifilter to work like itertools.filterfalse.
 
     Parameters
     ----------
@@ -36,15 +39,13 @@ def ifilter(
     Raises
     ------
     TypeError
-        if function is not callable or iterable is not iterable.
+        if `function` is not callable or `iterable` is not iterable.
 
     Returns
     -------
     Generator[Any, None, None]
-        filtered items from iterable.
 
     """
-    # import pdb; pdb.set_trace()
     if function is None:
         function = bool
     if false:

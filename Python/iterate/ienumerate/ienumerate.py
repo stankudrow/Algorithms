@@ -15,6 +15,9 @@ from typing import Any, Generator, Iterable, Tuple
 
 
 # Generator[yield_type, send_type, return_type]
+# https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
+
+
 def ienumerate(
     iterable: Iterable, start: int = 0
 ) -> Generator[Tuple[int, Any], None, None]:
@@ -31,7 +34,7 @@ def ienumerate(
     Raises
     ------
     TypeError
-        if start is not integer.
+        if `iterable` is not an iterable object or `start` is not an integer.
 
     References
     ----------
@@ -40,12 +43,12 @@ def ienumerate(
     Yields
     ------
     Generator[Tuple[int, Any], None, None]
-        ("enumerative" index, element).
 
     """
+    iterable = iter(iterable)
     if not isinstance(start, int):
         tname = type(start).__name__
-        raise TypeError(f"{tname} is not interpretable as integer")
+        raise TypeError(f"{tname} object cannot be interpreted as an integer")
     count = start
     for item in iterable:
         yield (count, item)
