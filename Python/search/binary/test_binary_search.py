@@ -8,25 +8,26 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from binary_search import ibinary_search as ibins, rbinary_search as rbins
+from iterative_binary_search import iterative_binary_search as isearch
+from recursive_binary_search import recursive_binary_search as rsearch
 
 
 @mark.parametrize("seq, val", [([], 0), ((), 0), ("", 0)])
-def test_binary_search_empty(seq, val):
+def test_empty_sequences(seq, val):
     """Empty sequences."""
-    assert ibins(seq, val) is rbins(seq, val) is None
+    assert isearch(seq, val) is rsearch(seq, val) is None
 
 
 @mark.parametrize(
     "seq, val, res", [([1], 1, 0), ((2,), 0, None), param("3", 1, 1, marks=mark.xfail)]
 )
-def test_binary_search_single_element(seq, val, res):
+def test_single_element_sequences(seq, val, res):
     """Search a value in a single element sequence."""
-    assert ibins(seq, val) == rbins(seq, val) == res
+    assert isearch(seq, val) == rsearch(seq, val) == res
 
 
 @mark.parametrize("seq", ["abcdef", range(2, 10), param("qwerty", marks=mark.xfail)])
-def test_binary_search_sequential_findings(seq):
+def test_sequential_findings(seq):
     """Find all positions in a sequence."""
     for ind, elem in enumerate(seq):
-        assert ibins(seq, elem) == rbins(seq, elem) == ind
+        assert isearch(seq, elem) == rsearch(seq, elem) == ind

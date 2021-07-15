@@ -1,12 +1,12 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-23T14:13:01.574840",
+        "timestamp": "2021-07-15T15:38:18.318700",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "binary_search.py": {
+        "iterative_binary_search.py": {
             "executed_lines": [
                 3,
                 6,
@@ -22,29 +22,49 @@
                 47,
                 48,
                 50,
-                51,
-                54,
-                76,
-                97,
-                99,
-                100,
-                101,
-                102,
-                103,
-                104,
-                105,
-                106,
-                108
+                51
             ],
             "summary": {
-                "covered_lines": 27,
-                "num_statements": 27,
+                "covered_lines": 15,
+                "num_statements": 15,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 12,
+                "num_branches": 6,
                 "num_partial_branches": 0,
-                "covered_branches": 12,
+                "covered_branches": 6,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "recursive_binary_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                17,
+                39,
+                41,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                52
+            ],
+            "summary": {
+                "covered_lines": 15,
+                "num_statements": 15,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 6,
+                "num_partial_branches": 0,
+                "covered_branches": 6,
                 "missing_branches": 0
             },
             "missing_lines": [],
@@ -56,20 +76,21 @@
                 6,
                 9,
                 11,
-                14,
+                12,
                 15,
-                17,
-                20,
-                23,
-                25,
-                28,
+                16,
+                18,
+                21,
+                24,
+                26,
                 29,
-                31,
-                32
+                30,
+                32,
+                33
             ],
             "summary": {
-                "covered_lines": 14,
-                "num_statements": 14,
+                "covered_lines": 15,
+                "num_statements": 15,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -83,8 +104,8 @@
         }
     },
     "totals": {
-        "covered_lines": 41,
-        "num_statements": 41,
+        "covered_lines": 45,
+        "num_statements": 45,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,

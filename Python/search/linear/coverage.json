@@ -1,12 +1,37 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-05-23T14:12:40.670251",
+        "timestamp": "2021-07-15T15:42:01.751139",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "linear_search.py": {
+        "iterative_linear_search.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                17,
+                33,
+                34,
+                35,
+                36
+            ],
+            "summary": {
+                "covered_lines": 8,
+                "num_statements": 8,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 4,
+                "num_partial_branches": 0,
+                "covered_branches": 4,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "recursive_linear_search.py": {
             "executed_lines": [
                 3,
                 6,
@@ -16,24 +41,19 @@
                 34,
                 35,
                 36,
-                39,
-                55,
-                56,
-                57,
-                58,
-                59,
-                60,
-                61
+                37,
+                38,
+                39
             ],
             "summary": {
-                "covered_lines": 16,
-                "num_statements": 16,
+                "covered_lines": 11,
+                "num_statements": 11,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 10,
+                "num_branches": 6,
                 "num_partial_branches": 0,
-                "covered_branches": 10,
+                "covered_branches": 6,
                 "missing_branches": 0
             },
             "missing_lines": [],
@@ -45,20 +65,21 @@
                 6,
                 9,
                 11,
-                14,
+                12,
                 15,
-                17,
-                20,
-                23,
-                25,
-                28,
+                16,
+                18,
+                21,
+                24,
+                26,
                 29,
-                31,
-                32
+                30,
+                32,
+                33
             ],
             "summary": {
-                "covered_lines": 14,
-                "num_statements": 14,
+                "covered_lines": 15,
+                "num_statements": 15,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -72,8 +93,8 @@
         }
     },
     "totals": {
-        "covered_lines": 30,
-        "num_statements": 30,
+        "covered_lines": 34,
+        "num_statements": 34,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,
