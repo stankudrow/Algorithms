@@ -43,7 +43,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    # mseq += seq1[ind1:] + seq2[ind2:]
+    # mseq += seq1[ind1:] + seq2[ind2:]  # possible replacement
     while ind1 < len1:
         mseq.append(seq1[ind1])
         ind1 += 1
