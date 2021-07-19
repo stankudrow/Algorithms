@@ -22,7 +22,7 @@ def ienumerate(
     iterable: Iterable, start: int = 0
 ) -> Generator[Tuple[int, Any], None, None]:
     """
-    Implementation of the Python enumerate function.
+    Python enumerate function implementation.
 
     Parameters
     ----------

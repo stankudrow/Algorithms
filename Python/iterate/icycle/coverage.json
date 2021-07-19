@@ -1,39 +1,35 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-07-19T22:10:44.607470",
+        "timestamp": "2021-07-19T18:58:39.585578",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "ifilter.py": {
+        "icycle.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
-                21,
-                49,
-                50,
-                51,
-                52,
-                54,
-                55
+                22,
+                41,
+                42
             ],
             "summary": {
-                "covered_lines": 10,
-                "num_statements": 10,
+                "covered_lines": 6,
+                "num_statements": 6,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 8,
+                "num_branches": 0,
                 "num_partial_branches": 0,
-                "covered_branches": 8,
+                "covered_branches": 0,
                 "missing_branches": 0
             },
             "missing_lines": [],
             "excluded_lines": []
         },
-        "test_ifilter.py": {
+        "test_icycle.py": {
             "executed_lines": [
                 3,
                 6,
@@ -43,24 +39,25 @@
                 19,
                 20,
                 22,
+                25,
+                26,
                 28,
-                30,
                 31,
+                33,
                 34,
+                35,
                 36,
                 37,
                 40,
                 42,
-                43,
-                46,
+                45,
+                47,
                 48,
-                49,
-                50,
-                51
+                49
             ],
             "summary": {
-                "covered_lines": 22,
-                "num_statements": 22,
+                "covered_lines": 23,
+                "num_statements": 23,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
@@ -74,14 +71,14 @@
         }
     },
     "totals": {
-        "covered_lines": 32,
-        "num_statements": 32,
+        "covered_lines": 29,
+        "num_statements": 29,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,
-        "num_branches": 14,
+        "num_branches": 6,
         "num_partial_branches": 0,
-        "covered_branches": 14,
+        "covered_branches": 6,
         "missing_branches": 0
     }
 }

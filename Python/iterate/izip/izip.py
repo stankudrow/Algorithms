@@ -17,7 +17,7 @@ from typing import Any, Generator, Iterable, Tuple
 # Generator[yield_type, send_type, return_type]
 def izip(*iterables: Iterable) -> Generator[Tuple[Any, ...], None, None]:
     """
-    Implementation of the Python zip function.
+    Python zip function implementation.
 
     Parameters
     ----------

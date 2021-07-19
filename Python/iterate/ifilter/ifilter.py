@@ -22,7 +22,7 @@ def ifilter(
     function: Callable, iterable: Iterable, false: bool = False
 ) -> Generator[Any, None, None]:
     """
-    Implementation of the Python filter function.
+    Python filter function implementation.
 
     Notes
     -----
