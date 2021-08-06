@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge sort algorithm module."""
+"""The merge sort algorithm module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -43,13 +43,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    # mseq += seq1[ind1:] + seq2[ind2:]
-    while ind1 < len1:
-        mseq.append(seq1[ind1])
-        ind1 += 1
-    while ind2 < len2:
-        mseq.append(seq2[ind2])
-        ind2 += 1
+    mseq += list(seq1)[ind1:] + list(seq2)[ind2:]  # for mypy
     return mseq
 
 
@@ -60,7 +54,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
 
 def rec_merge_sort(seq: Sequence) -> List:
     """
-    Recursive merge sort on a sequence.
+    Sort a sequence with the recursive merge sort algorithm.
 
     Parameters
     ----------

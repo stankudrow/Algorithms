@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge sort algorithm module."""
+"""The merge sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -43,13 +43,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
             mseq.append(elem2)
             ind2 += 1
     # either seq1 or seq2 is exhausted, so it is just []
-    # mseq += seq1[ind1:] + seq2[ind2:]
-    while ind1 < len1:
-        mseq.append(seq1[ind1])
-        ind1 += 1
-    while ind2 < len2:
-        mseq.append(seq2[ind2])
-        ind2 += 1
+    mseq += list(seq1)[ind1:] + list(seq2)[ind2:]  # for mypy
     return mseq
 
 
@@ -58,16 +52,15 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
 # Space     : O(n)
 
 
-# merge function is meant to be pure
-# it would have been easier to make assignments in place
-# so this implementation is more expensive than classic one
+# The merge function here is meant to be pure.
+# A less costly approach is to make assignments in place.
 
-# this link provided some insights:
+# This link provided some insights:
 # https://www.techiedelight.com/iterative-merge-sort-algorithm-bottom-up/
 
 def iter_merge_sort(seq: Sequence) -> List:
     """
-    Iterative merge sort on a sequence.
+    Sort a sequence with the iterative insertion sort algorithm.
 
     Parameters
     ----------
