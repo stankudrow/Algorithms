@@ -19,9 +19,15 @@ from typing import Iterator
 # https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
 # https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
+
 # in itertools module `count` is a class
-def icount(start: Number = 0, step: Number = 1) -> Iterator[Number]:  # type: ignore
+def icount(start: Number = 0,  # type: ignore
+           step: Number = 1) -> Iterator[Number]:  # type: ignore
     """
+    Yield evenly spaced values starting with the number start.
+
+    Notes
+    -----
     The Python count function implementation.
 
     Parameters
@@ -34,8 +40,12 @@ def icount(start: Number = 0, step: Number = 1) -> Iterator[Number]:  # type: ig
     TypeError
         if `start` or `count` is not a number.
 
-    Returns
-    -------
+    References
+    ----------
+    https://docs.python.org/3/library/itertools.html#itertools.count
+
+    Yields
+    ------
     Iterator[Number]
 
     """
