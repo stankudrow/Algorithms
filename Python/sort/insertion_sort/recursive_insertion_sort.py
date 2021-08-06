@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recursive insertion sort algorithm module."""
+"""The recursive insertion sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def rec_insertion_sort(seq: Sequence) -> List:
     """
-    Recursive insertion sort on a sequence.
+    Sort a sequence with the recursive insertion sort algorithm.
 
     Parameters
     ----------
@@ -40,6 +40,6 @@ def rec_insertion_sort(seq: Sequence) -> List:
             j -= 1
         seq[j + 1] = key
 
-    seq: List = list(seq)
-    rinsertsort(seq, len(seq))
-    return seq
+    lst: List = list(seq)
+    rinsertsort(lst, len(lst))
+    return lst

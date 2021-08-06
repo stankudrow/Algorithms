@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative insertion sort algorithm module."""
+"""The iterative insertion sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def iter_insertion_sort(seq: Sequence) -> List:
     """
-    Iterative insertion sort on a sequence.
+    Sort a sequence with the iterative insertion sort algorithm.
 
     Parameters
     ----------
@@ -27,13 +27,13 @@ def iter_insertion_sort(seq: Sequence) -> List:
     List
 
     """
-    seq: List = list(seq)
-    length: int = len(seq)
-    for i in range(1, length):
-        key = seq[i]
+    lst: List = list(seq)
+    size: int = len(seq)
+    for i in range(1, size):
+        key = lst[i]
         j: int = i - 1
-        while (j >= 0) and (seq[j] > key):
-            seq[j + 1] = seq[j]
+        while (j >= 0) and (lst[j] > key):
+            lst[j + 1] = lst[j]
             j -= 1
-        seq[j + 1] = key
-    return seq
+        lst[j + 1] = key
+    return lst
