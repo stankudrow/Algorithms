@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative shell sort algorithm module.
+"""
+The iterative shell sort algorithm.
 
-The Shell sort algorithm was invented by Donald Shell.
+The Shell sort algorithm was invented by Donald Shell in 1959.
 
-This algorithm is known as:
-    * diminishing increment sort
-    * n-gap insertion sort
+Notes
+-----
+    The shell sort is a generalisation of the insertion sort (1-gap) algorithm.
 
-Shell sort is a generalisation of insertion sort (1-gap) algorithm.
+References
+----------
+    * https://en.wikipedia.org/wiki/Shellsort
+    * https://www.geeksforgeeks.org/shellsort/
+    * https://www.tutorialspoint.com/Shell-Sort
+
 """
 
 
@@ -19,13 +25,13 @@ from typing import List, Sequence
 
 
 # Complexity: worst case
-# Time      : O(n**2) (simple case of gap choice)
+# Time      : depends on the gap -> O(n**2) for this implementation
 # Space:    : O(1) -> this implementation requires O(n)
 
 
 def iter_shell_sort(seq: Sequence) -> List:
     """
-    Iterative shell sort on a sequence.
+    Sort a sequence with the Shell sort algorithm.
 
     Parameters
     ----------
@@ -39,8 +45,8 @@ def iter_shell_sort(seq: Sequence) -> List:
     seq = list(seq)  # copy -> purity sake
     size = len(seq)
     gap = size // 2
-    while gap > 0:
-        for i in range(0, size):
+    while gap:
+        for i in range(size):
             for j in range(i + gap, size, gap):
                 if seq[i] > seq[j]:
                     seq[i], seq[j] = seq[j], seq[i]
