@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recursive bubble sort algorithm module."""
+"""The recursive bubble sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def rec_bubble_sort(seq: Sequence) -> List:
     """
-    Recursive bubble sort on a sequence.
+    Sort a sequence with the recursive bubble sort algorithm.
 
     Parameters
     ----------
@@ -38,6 +38,6 @@ def rec_bubble_sort(seq: Sequence) -> List:
                 seq[j], seq[j + 1] = nxt, cur
         rbubblesort(seq, length - 1)
 
-    seq: List = list(seq)
-    rbubblesort(seq, len(seq))
-    return seq
+    lst: List = list(seq)
+    rbubblesort(lst, len(lst))
+    return lst

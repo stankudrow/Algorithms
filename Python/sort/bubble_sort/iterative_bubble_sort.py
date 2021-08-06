@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative bubble sort algorithm module."""
+"""The iterative bubble sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def iter_bubble_sort(seq: Sequence) -> List:
     """
-    Iterative bubble sort on a sequence.
+    Sort a sequence with the iterative bubble sort algorithm.
 
     Parameters
     ----------
@@ -27,15 +27,15 @@ def iter_bubble_sort(seq: Sequence) -> List:
     List
 
     """
-    seq: List = list(seq)
-    length: int = len(seq)
+    lst: List = list(seq)
+    length: int = len(lst)
     for i in range(length):
         swapped: bool = False
         for j in range(length - i - 1):
-            cur, nxt = seq[j], seq[j + 1]
+            cur, nxt = lst[j], lst[j + 1]
             if cur > nxt:
-                seq[j], seq[j + 1] = nxt, cur
+                lst[j], lst[j + 1] = nxt, cur
                 swapped = True
         if not swapped:
             break
-    return seq
+    return lst
