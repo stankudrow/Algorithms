@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge test module"""
+"""The merge function test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"

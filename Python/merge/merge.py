@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Merge algorithm module."""
+"""The merge (sequences) algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -14,7 +14,7 @@ from typing import Sequence
 # Space     : O(m)
 
 
-# a subrountine for mergesort function
+# Typically this function is a subrountine for merge_sort algorithm.
 def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
     """
     Merge two sorted sequences into a new sorted one.
@@ -42,12 +42,5 @@ def merge(seq1: Sequence, seq2: Sequence) -> Sequence:
         else:
             mseq.append(elem2)
             ind2 += 1
-    # either seq1 or seq2 is exhausted, so it is just []
-    # mseq += seq1[ind1:] + seq2[ind2:]  # possible replacement
-    while ind1 < len1:
-        mseq.append(seq1[ind1])
-        ind1 += 1
-    while ind2 < len2:
-        mseq.append(seq2[ind2])
-        ind2 += 1
+    mseq += list(seq1)[ind1:] + list(seq2)[ind2:]  # for mypy
     return mseq
