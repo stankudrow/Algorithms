@@ -22,6 +22,10 @@ from typing import Any, Iterable
 # in itertools module `cycle` is a class
 def icycle(iterable: Iterable[Any]) -> Iterable[Any]:
     """
+    Yield elements from the iterable with indefinite repetition.
+
+    Notes
+    -----
     The Python cycle function implementation.
 
     Parameters
@@ -33,8 +37,12 @@ def icycle(iterable: Iterable[Any]) -> Iterable[Any]:
     TypeError
         if a non-iterable is passed.
 
-    Returns
-    -------
+    References
+    ----------
+    https://docs.python.org/3/library/itertools.html#itertools.cycle
+
+    Yields
+    ------
     Iterable[Any]
 
     """
