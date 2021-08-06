@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Python count function implementation module."""
+"""The Python count function implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
 from numbers import Number
-from typing import Generator
+from typing import Iterator
 
 
 # Complexity: worst case
@@ -17,12 +17,12 @@ from typing import Generator
 
 # Generator[yield_type, send_type, return_type]
 # https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
-
+# https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 # in itertools module `count` is a class
-def icount(start: Number = 0, step: Number = 1) -> Generator[Number, None, None]:
+def icount(start: Number = 0, step: Number = 1) -> Iterator[Number]:  # type: ignore
     """
-    Python count function implementation.
+    The Python count function implementation.
 
     Parameters
     ----------
@@ -36,7 +36,7 @@ def icount(start: Number = 0, step: Number = 1) -> Generator[Number, None, None]
 
     Returns
     -------
-    Generator[Number, None, None]
+    Iterator[Number]
 
     """
     if not (isinstance(start, Number) and isinstance(step, Number)):
@@ -44,4 +44,4 @@ def icount(start: Number = 0, step: Number = 1) -> Generator[Number, None, None]
     val = start
     while True:
         yield val
-        val += step
+        val += step  # type: ignore

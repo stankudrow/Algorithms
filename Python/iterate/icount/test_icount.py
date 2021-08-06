@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Icount test module."""
+"""The icount function test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -32,7 +32,7 @@ def not_numbers():
 
 
 def _test_mech(data):
-    """Core test function for count."""
+    """The test function for (i)count functions."""
     for start in data:
         for step in data:
             icnt = icount(start, step)
