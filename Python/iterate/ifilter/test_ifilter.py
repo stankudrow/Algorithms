@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Ifilter test module."""
+"""The ifilter test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"

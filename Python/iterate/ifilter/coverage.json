@@ -1,7 +1,7 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-07-19T22:10:44.607470",
+        "timestamp": "2021-08-06T18:37:53.203180",
         "branch_coverage": true,
         "show_contexts": false
     },
@@ -11,23 +11,27 @@
                 3,
                 6,
                 9,
-                21,
-                49,
-                50,
-                51,
-                52,
-                54,
-                55
+                22,
+                57,
+                59,
+                61,
+                62,
+                64,
+                65,
+                66,
+                67,
+                69,
+                70
             ],
             "summary": {
-                "covered_lines": 10,
-                "num_statements": 10,
+                "covered_lines": 14,
+                "num_statements": 14,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 8,
+                "num_branches": 6,
                 "num_partial_branches": 0,
-                "covered_branches": 8,
+                "covered_branches": 6,
                 "missing_branches": 0
             },
             "missing_lines": [],
@@ -74,14 +78,14 @@
         }
     },
     "totals": {
-        "covered_lines": 32,
-        "num_statements": 32,
+        "covered_lines": 36,
+        "num_statements": 36,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,
-        "num_branches": 14,
+        "num_branches": 12,
         "num_partial_branches": 0,
-        "covered_branches": 14,
+        "covered_branches": 12,
         "missing_branches": 0
     }
 }

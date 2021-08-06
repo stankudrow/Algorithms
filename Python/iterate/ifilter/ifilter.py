@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Python filter function implementation module."""
+"""The Python filter builtin function implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Any, Callable, Generator, Iterable
+from typing import Any, Callable, Iterable
 
 
 # Complexity: worst case
@@ -16,17 +16,19 @@ from typing import Any, Callable, Generator, Iterable
 
 # Generator[yield_type, send_type, return_type]
 # https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
+# https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 
 def ifilter(
     function: Callable, iterable: Iterable, false: bool = False
-) -> Generator[Any, None, None]:
+) -> Iterable[Any]:
     """
-    Python filter function implementation.
+    Filter out the elements from iterable in accordance to function.
 
     Notes
     -----
-    `false` key makes ifilter to work like itertools.filterfalse.
+    The Python filter builtin function implementation.
+    The `false` key makes ifilter to work like itertools.filterfalse function.
 
     Parameters
     ----------
@@ -41,15 +43,28 @@ def ifilter(
     TypeError
         if `function` is not callable or `iterable` is not iterable.
 
-    Returns
-    -------
-    Generator[Any, None, None]
+    References
+    ----------
+    https://docs.python.org/3/library/functions.html#filter
+    https://docs.python.org/3/library/itertools.html#itertools.filterfalse
+
+    Yields
+    ------
+    Iterable[Any]
 
     """
+
+    def _falsify(func: Callable):
+        """Negate the result of foo function."""
+        def _not(arg: Any):
+            """Return the negated result of foo function."""
+            return not func(arg)
+        return _not
+
     if function is None:
         function = bool
     if false:
-        func = lambda arg: not function(arg)
+        func = _falsify(function)  # pylint is satisfied
     else:
         func = function
     return (item for item in iterable if func(item))
