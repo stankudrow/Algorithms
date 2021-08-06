@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recursive selection sort algorithm module."""
+"""The recursive selection sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def rec_selection_sort(seq: Sequence) -> List:
     """
-    Recursive selection sort on a sequence.
+    Sort a sequence with the recursive selection sort algorithm.
 
     Parameters
     ----------
@@ -40,6 +40,6 @@ def rec_selection_sort(seq: Sequence) -> List:
         seq[last], seq[key] = seq[key], seq[last]
         rselectsort(seq, last)
 
-    seq: List = list(seq)
-    rselectsort(seq, len(seq))
-    return seq
+    lst: List = list(seq)
+    rselectsort(lst, len(lst))
+    return lst

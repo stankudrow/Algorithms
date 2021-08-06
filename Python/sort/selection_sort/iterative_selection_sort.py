@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative selection sort algorithm module."""
+"""The iterative selection sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from typing import List, Sequence
 
 def iter_selection_sort(seq: Sequence) -> List:
     """
-    Iterative selection sort on a sequence.
+    Sort a sequence with the iterative selection sort algorithm.
 
     Parameters
     ----------
@@ -27,12 +27,12 @@ def iter_selection_sort(seq: Sequence) -> List:
     List
 
     """
-    seq: List = list(seq)
-    length: int = len(seq)
-    for i in range(length):
+    lst: List = list(seq)
+    size: int = len(seq)
+    for i in range(size):
         key: int = i
-        for j in range(i + 1, length):
-            if seq[j] < seq[key]:
+        for j in range(i + 1, size):
+            if lst[j] < lst[key]:
                 key = j
-        seq[i], seq[key] = seq[key], seq[i]
-    return seq
+        lst[i], lst[key] = lst[key], lst[i]
+    return lst
