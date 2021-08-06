@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Python zip function implementation module."""
+"""The Python zip builtin function implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Any, Generator, Iterable, Tuple
+from typing import Any, Iterable, Tuple
 
 
 # Complexity: worst case
@@ -15,17 +15,29 @@ from typing import Any, Generator, Iterable, Tuple
 
 
 # Generator[yield_type, send_type, return_type]
-def izip(*iterables: Iterable) -> Generator[Tuple[Any, ...], None, None]:
+# https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
+# https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+
+
+def izip(*iterables: Iterable) -> Iterable[Tuple[Any, ...]]:
     """
-    Python zip function implementation.
+    Yield the tuple with sequentially chosen elements from iterables.
+
+    Notes
+    -----
+    The Python zip builtin function implementation.
 
     Parameters
     ----------
     *iterable : Tuple[Iterable, ...]
 
+    References
+    ----------
+    https://docs.python.org/3/library/functions.html#zip
+
     Yields
     ------
-    Tuple[Any, ...]
+    Iterable[Tuple[Any, ...]]
 
     """
     sentinel = object()  # allows None as a value in iterables
@@ -33,12 +45,8 @@ def izip(*iterables: Iterable) -> Generator[Tuple[Any, ...], None, None]:
     while iters:  # until exhausted if all are of equal length
         res = []
         for iter_ in iters:
-            elem = next(iter_, sentinel)  # sentinel instead None allows None values
+            elem = next(iter_, sentinel)  # object enable None's processing
             if elem is sentinel:
                 return  # until the smallest iterator is exhausted
             res.append(elem)
         yield tuple(res)
-
-
-# It turned out to be as same as here:
-# https://docs.python.org/3/library/functions.html#zip

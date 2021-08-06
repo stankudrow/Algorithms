@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Izip test module."""
+"""The izip test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
