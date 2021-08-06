@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Python cycle function implementation module."""
+"""The Python cycle function implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Any, Generator, Iterable
+from typing import Any, Iterable
 
 
 # Complexity: worst case
@@ -16,25 +16,26 @@ from typing import Any, Generator, Iterable
 
 # Generator[yield_type, send_type, return_type]
 # https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
+# https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 
 # in itertools module `cycle` is a class
-def icycle(iterable: Iterable) -> Generator[Any, None, None]:
+def icycle(iterable: Iterable[Any]) -> Iterable[Any]:
     """
-    Python cycle function implementation.
+    The Python cycle function implementation.
 
     Parameters
     ----------
-    iterable: Iterable
+    iterable: Iterable[Any]
 
     Raises
     ------
     TypeError
-        if a non-iterable is passed
+        if a non-iterable is passed.
 
     Returns
     -------
-    Generator[Any, None, None]
+    Iterable[Any]
 
     """
     while True:

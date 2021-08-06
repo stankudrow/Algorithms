@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Icycle test module."""
+"""The icycle test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -29,7 +29,7 @@ def iters():
 
 
 def _test_mech(data):
-    """Core test function for cycle."""
+    """The test function for (i)cycle functions."""
     for iter_ in data:
         icyc = icycle(iter_)
         cyc = cycle(iter_)
