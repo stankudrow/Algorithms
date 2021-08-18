@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The Python count function implementation."""
+"""The Python itertools count class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -20,7 +20,6 @@ from typing import Iterator
 # https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 
-# in itertools module `count` is a class
 def icount(start: Number = 0,  # type: ignore
            step: Number = 1) -> Iterator[Number]:  # type: ignore
     """
@@ -28,7 +27,7 @@ def icount(start: Number = 0,  # type: ignore
 
     Notes
     -----
-    The Python count function implementation.
+    The Python itertools count class implementation.
 
     Parameters
     ----------

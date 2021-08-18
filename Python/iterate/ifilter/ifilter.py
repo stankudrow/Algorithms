@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The Python filter builtin function implementation."""
+"""The Python builtin filter class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -27,8 +27,8 @@ def ifilter(
 
     Notes
     -----
-    The Python filter builtin function implementation.
-    The `false` key makes ifilter to work like itertools.filterfalse function.
+    The Python builtin filter class implementation.
+    The `false` key makes ifilter to work like itertools.filterfalse class.
 
     Parameters
     ----------

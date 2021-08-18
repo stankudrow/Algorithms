@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The Python zip builtin function implementation."""
+"""The Python builtin zip class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -25,7 +25,7 @@ def izip(*iterables: Iterable) -> Iterable[Tuple[Any, ...]]:
 
     Notes
     -----
-    The Python zip builtin function implementation.
+    The Python builtin zip class implementation.
 
     Parameters
     ----------

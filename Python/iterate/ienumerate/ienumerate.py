@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The Python enumerate function implementation."""
+"""The Python enumerate builtin class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -26,7 +26,7 @@ def ienumerate(iterable: Iterable,
 
     Notes
     -----
-    The Python enumerate builtin function implementation.
+    The Python enumerate builtin class implementation.
 
     Parameters
     ----------

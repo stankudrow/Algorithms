@@ -1,45 +1,57 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Python repeat function implementation module."""
+"""The Python itertools repeat class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
 
 
-from typing import Generator, Optional
+from typing import Optional
 
 
 # Complexity: worst case
-# Time      : O(n)
+# Time      : O(n) -> depends on the number of times to repeat
 # Space     : O(1)
 
 
-# Generator[yield_type, send_type, return_type]
-# https://stackoverflow.com/questions/38419654/proper-type-annotation-of-python-functions-with-yield
-
-
-# in itertools module `repeat` is a class
-def irepeat(obj: object, times: Optional = None) -> Generator[object, None, None]:
+def irepeat(obj: object, cnt: Optional[int] = None) -> object:
     """
-    Python repeat function implementation.
+    Yield the object cnt times if specified or infinitely.
+
+    Notes
+    -----
+    The Python itertools repeat class implementation.
 
     Parameters
     ----------
-    iterable: Iterable
+    obj : object
+        to be repeated.
+    cnt : Optional[int], optional
+        the number of times counter. The default is None.
 
     Raises
     ------
     TypeError
-        if `times` is not None and not an integer.
+        if object is not provided or cnt is not integer.
 
-    Returns
-    -------
-    Generator[Number, None, None]
+    References
+    ----------
+    https://docs.python.org/3/library/itertools.html#itertools.repeat
+
+    Yields
+    ------
+    object
 
     """
-    if times is None:
-        while True:
-            yield obj
-    else:
-        for i in range(times):
-            yield obj
+    def _repeat(obj: object, cnt: Optional[int] = None) -> object:
+        """Yield repeat generator."""
+        if cnt is None:
+            while True:
+                yield obj
+        else:
+            for _ in range(cnt):
+                yield obj
+
+    if not (cnt is None or isinstance(cnt, int)):
+        raise TypeError(f'cnt = {cnt} is not integer')
+    return _repeat(obj, cnt)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The Python cycle function implementation."""
+"""The Python itertools cycle class implementation."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -19,14 +19,13 @@ from typing import Any, Iterable
 # https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 
-# in itertools module `cycle` is a class
 def icycle(iterable: Iterable[Any]) -> Iterable[Any]:
     """
     Yield elements from the iterable with indefinite repetition.
 
     Notes
     -----
-    The Python cycle function implementation.
+    The Python itertools cycle class implementation.
 
     Parameters
     ----------
@@ -35,7 +34,7 @@ def icycle(iterable: Iterable[Any]) -> Iterable[Any]:
     Raises
     ------
     TypeError
-        if a non-iterable is passed.
+        if a non-iterable object is passed.
 
     References
     ----------
