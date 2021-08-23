@@ -1,0 +1,129 @@
+{
+    "meta": {
+        "version": "5.5",
+        "timestamp": "2021-08-23T15:05:20.645766",
+        "branch_coverage": true,
+        "show_contexts": false
+    },
+    "files": {
+        "fib_gen.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                10,
+                18,
+                42,
+                44,
+                45,
+                46,
+                47,
+                49,
+                50,
+                51,
+                52,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+            ],
+            "summary": {
+                "covered_lines": 20,
+                "num_statements": 21,
+                "percent_covered": 90.3225806451613,
+                "missing_lines": 1,
+                "excluded_lines": 0,
+                "num_branches": 10,
+                "num_partial_branches": 2,
+                "covered_branches": 8,
+                "missing_branches": 2
+            },
+            "missing_lines": [
+                48
+            ],
+            "excluded_lines": []
+        },
+        "fib_rec.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                10,
+                19,
+                43,
+                45,
+                46,
+                47,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54
+            ],
+            "summary": {
+                "covered_lines": 15,
+                "num_statements": 15,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 6,
+                "num_partial_branches": 0,
+                "covered_branches": 6,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "test_fibonacci.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                12,
+                15,
+                16,
+                18,
+                19,
+                20,
+                21,
+                24,
+                25,
+                27,
+                28,
+                29,
+                30,
+                33,
+                34,
+                36
+            ],
+            "summary": {
+                "covered_lines": 20,
+                "num_statements": 20,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 2,
+                "num_partial_branches": 0,
+                "covered_branches": 2,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        }
+    },
+    "totals": {
+        "covered_lines": 55,
+        "num_statements": 56,
+        "percent_covered": 95.94594594594595,
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "num_branches": 18,
+        "num_partial_branches": 2,
+        "covered_branches": 16,
+        "missing_branches": 2
+    }
+}

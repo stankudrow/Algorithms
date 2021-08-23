@@ -14,13 +14,13 @@ from typing import Any, Optional, Sequence
 # Space     : O(1)
 
 
-def iterative_binary_search(seq: Sequence, value: Any) -> Optional[int]:
+def iter_binary_search(seq: Sequence, value: Any) -> Optional[int]:
     """
     Iterative binary search.
 
     Notes
     -----
-    Binary search works only on sorted sequences
+    Binary search works only on sorted sequences.
 
     Parameters
     ----------

@@ -14,7 +14,7 @@ from typing import Any, Optional, Sequence
 # Space     : O(n)
 
 
-def recursive_linear_search(seq: Sequence, value: Any) -> Optional[int]:
+def rec_linear_search(seq: Sequence, value: Any) -> Optional[int]:
     """
     Recursive linear search.
 
@@ -33,7 +33,7 @@ def recursive_linear_search(seq: Sequence, value: Any) -> Optional[int]:
     if seq:
         if seq[0] == value:
             return 0
-        index = recursive_linear_search(seq[1:], value)
+        index = rec_linear_search(seq[1:], value)
         if index is not None:
             return index + 1
     return None

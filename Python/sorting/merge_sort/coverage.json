@@ -1,0 +1,201 @@
+{
+    "meta": {
+        "version": "5.5",
+        "timestamp": "2021-08-23T12:24:17.522739",
+        "branch_coverage": true,
+        "show_contexts": false
+    },
+    "files": {
+        "iterative_merge_sort.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                25,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+            ],
+            "summary": {
+                "covered_lines": 16,
+                "num_statements": 16,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 4,
+                "num_partial_branches": 0,
+                "covered_branches": 4,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "merge.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                18,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                43,
+                44,
+                45,
+                46
+            ],
+            "summary": {
+                "covered_lines": 18,
+                "num_statements": 18,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 4,
+                "num_partial_branches": 0,
+                "covered_branches": 4,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "recursive_merge_sort.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                19,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38
+            ],
+            "summary": {
+                "covered_lines": 12,
+                "num_statements": 12,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 2,
+                "num_partial_branches": 0,
+                "covered_branches": 2,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "test_merge.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                17,
+                18,
+                20,
+                21,
+                24,
+                28,
+                30,
+                31,
+                34,
+                42,
+                44,
+                45,
+                48,
+                56,
+                58,
+                59
+            ],
+            "summary": {
+                "covered_lines": 20,
+                "num_statements": 20,
+                "percent_covered": 100.0,
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 0,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "test_merge_sort.py": {
+            "executed_lines": [
+                3,
+                6,
+                9,
+                11,
+                12,
+                18,
+                19,
+                21,
+                22,
+                25,
+                26,
+                28,
+                29,
+                30,
+                33,
+                36,
+                38,
+                39,
+                40,
+                43,
+                46,
+                48,
+                49,
+                50,
+                53,
+                56,
+                58
+            ],
+            "summary": {
+                "covered_lines": 27,
+                "num_statements": 28,
+                "percent_covered": 96.42857142857143,
+                "missing_lines": 1,
+                "excluded_lines": 0,
+                "num_branches": 0,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 0
+            },
+            "missing_lines": [
+                59
+            ],
+            "excluded_lines": []
+        }
+    },
+    "totals": {
+        "covered_lines": 93,
+        "num_statements": 94,
+        "percent_covered": 99.03846153846153,
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "num_branches": 10,
+        "num_partial_branches": 0,
+        "covered_branches": 10,
+        "missing_branches": 0
+    }
+}

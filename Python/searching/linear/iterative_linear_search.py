@@ -14,7 +14,7 @@ from typing import Any, Optional, Sequence
 # Space     : O(1)
 
 
-def iterative_linear_search(seq: Sequence, value: Any) -> Optional[int]:
+def iter_linear_search(seq: Sequence, value: Any) -> Optional[int]:
     """
     Iterative linear search.
 

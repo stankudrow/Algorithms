@@ -14,13 +14,13 @@ from typing import Any, Optional, Sequence
 # Space     : O(log_2(n))
 
 
-def recursive_binary_search(seq: Sequence, value: Any) -> Optional[int]:
+def rec_binary_search(seq: Sequence, value: Any) -> Optional[int]:
     """
     Recursive binary search.
 
     Notes
     -----
-    Binary search works only on sorted sequences
+    Binary search works only on sorted sequences.
 
     Parameters
     ----------
