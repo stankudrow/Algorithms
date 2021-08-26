@@ -8,8 +8,8 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from iterative_linear_search import iter_linear_search as isearch
-from recursive_linear_search import rec_linear_search as rsearch
+from linear_search_iter import linear_search_iter as isearch
+from linear_search_rec import linear_search_rec as rsearch
 
 
 @mark.parametrize("seq, val", [([], 0), ((), 0), ("", 0)])

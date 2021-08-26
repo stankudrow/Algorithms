@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative binary search algorithm module."""
+"""Iterative binary search algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -14,7 +14,7 @@ from typing import Any, Optional, Sequence
 # Space     : O(1)
 
 
-def iter_binary_search(seq: Sequence, value: Any) -> Optional[int]:
+def binary_search_iter(seq: Sequence, value: Any) -> Optional[int]:
     """
     Iterative binary search.
 

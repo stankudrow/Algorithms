@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recursive binary search algorithm module."""
+"""Recursive binary search algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -14,7 +14,7 @@ from typing import Any, Optional, Sequence
 # Space     : O(log_2(n))
 
 
-def rec_binary_search(seq: Sequence, value: Any) -> Optional[int]:
+def binary_search_rec(seq: Sequence, value: Any) -> Optional[int]:
     """
     Recursive binary search.
 

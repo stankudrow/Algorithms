@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Recursive linear search algorithm module."""
+"""Iterative linear search algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -11,12 +11,12 @@ from typing import Any, Optional, Sequence
 
 # Complexity: worst case
 # Time      : O(n)
-# Space     : O(n)
+# Space     : O(1)
 
 
-def rec_linear_search(seq: Sequence, value: Any) -> Optional[int]:
+def linear_search_iter(seq: Sequence, value: Any) -> Optional[int]:
     """
-    Recursive linear search.
+    Iterative linear search.
 
     Parameters
     ----------
@@ -30,10 +30,7 @@ def rec_linear_search(seq: Sequence, value: Any) -> Optional[int]:
     Optional[int]
         the index of value if in sequence or None.
     """
-    if seq:
-        if seq[0] == value:
-            return 0
-        index = rec_linear_search(seq[1:], value)
-        if index is not None:
-            return index + 1
+    for index, element in enumerate(seq):
+        if element == value:
+            return index
     return None

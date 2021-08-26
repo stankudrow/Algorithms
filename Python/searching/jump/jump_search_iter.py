@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Iterative jump search algorithm module."""
+"""Iterative jump search algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -15,9 +15,9 @@ from typing import Any, Optional, Sequence
 # Space     : O(1)
 
 
-def iter_jump_search(seq: Sequence, value: Any) -> Optional[int]:
+def jump_search_iter(seq: Sequence, value: Any) -> Optional[int]:
     """
-    Iterative jump search.
+    Iterative jump search algorithm.
 
     Notes
     -----
@@ -33,28 +33,29 @@ def iter_jump_search(seq: Sequence, value: Any) -> Optional[int]:
     Returns
     -------
     Optional[int]
-        the index of value if in sequence or None.
+        the index of value if it is in sequence, otherwise None.
 
     """
+
     def get_jump(value: int) -> int:
         """Return a jump value for jump search."""
         return int(sqrt(value))
 
-    size = len(seq)
-    jump = get_jump(size)
-    end = size
-    index = 0
-    while index < end:
-        elem = seq[index]
-        if elem >= value:
-            if elem == value:
-                return index
-            end = index
-            index = max(-1, index - jump) + 1
+    length = len(seq)
+    jump = get_jump(length)
+    left, right = 0, length
+    while left < right:
+        elem = seq[left]
+        if elem == value:
+            return left
+        if elem > value:
+            right = min(left, right)
+            left = max(0, left - jump) + 1
             jump = get_jump(jump)
             continue
-        if jump > 1:
-            index = min(index + jump, end - 1)
-        else:
-            index += jump
+        if (left + jump) >= right:
+            jump = get_jump(jump)
+            left += jump
+            continue
+        left += jump
     return None
