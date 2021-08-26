@@ -19,17 +19,18 @@ from typing import Any, Iterable, Tuple
 # https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
 
-def izip(*iterables: Iterable) -> Iterable[Tuple[Any, ...]]:
+def izip(
+    *iterables: Tuple[Iterable, ...], longest: bool = False
+) -> Iterable[Tuple[Any, ...]]:
     """
     Yield the tuple with sequentially chosen elements from iterables.
 
-    Notes
-    -----
-    The Python builtin zip class implementation.
-
     Parameters
     ----------
-    *iterable : Tuple[Iterable, ...]
+    *iterables : Tuple[Iterable, ...]
+        to zip.
+    longest : bool, optional
+        zip according to the longest iterable. The default is False.
 
     References
     ----------
@@ -37,16 +38,24 @@ def izip(*iterables: Iterable) -> Iterable[Tuple[Any, ...]]:
 
     Yields
     ------
-    Iterable[Tuple[Any, ...]]
+    Tuple[Any, ...]
 
     """
     sentinel = object()  # allows None as a value in iterables
     iters = [iter(iter_) for iter_ in iterables]
-    while iters:  # until exhausted if all are of equal length
+    iters_len = len(iterables)
+    while True:
         res = []
+        longest_count = 0
         for iter_ in iters:
-            elem = next(iter_, sentinel)  # object enable None's processing
+            elem = next(iter_, sentinel)
             if elem is sentinel:
-                return  # until the smallest iterator is exhausted
+                if longest:
+                    elem = None
+                    longest_count += 1
+                else:
+                    return  # the smallest iterator is exhausted
             res.append(elem)
+            if longest and longest_count == iters_len:
+                return
         yield tuple(res)

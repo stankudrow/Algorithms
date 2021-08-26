@@ -1,49 +1,36 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-08-26T12:31:45.098013",
+        "timestamp": "2021-08-26T12:48:00.050408",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "izip.py": {
+        "ichain.py": {
             "executed_lines": [
                 3,
                 6,
                 9,
                 22,
-                44,
-                45,
-                46,
-                48,
-                49,
-                50,
-                51,
-                52,
-                53,
-                54,
-                55,
-                57,
-                58,
-                59,
-                60,
-                61
+                40,
+                41,
+                42
             ],
             "summary": {
-                "covered_lines": 20,
-                "num_statements": 20,
+                "covered_lines": 7,
+                "num_statements": 7,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 10,
+                "num_branches": 4,
                 "num_partial_branches": 0,
-                "covered_branches": 10,
+                "covered_branches": 4,
                 "missing_branches": 0
             },
             "missing_lines": [],
             "excluded_lines": []
         },
-        "test_izip.py": {
+        "test_ichain.py": {
             "executed_lines": [
                 3,
                 6,
@@ -51,28 +38,18 @@
                 11,
                 13,
                 19,
-                20,
-                22,
-                25,
-                27,
                 28,
-                29,
-                32,
-                34,
-                35,
-                36,
-                37,
-                38
+                30
             ],
             "summary": {
-                "covered_lines": 18,
-                "num_statements": 18,
+                "covered_lines": 8,
+                "num_statements": 8,
                 "percent_covered": 100.0,
                 "missing_lines": 0,
                 "excluded_lines": 0,
-                "num_branches": 8,
+                "num_branches": 0,
                 "num_partial_branches": 0,
-                "covered_branches": 8,
+                "covered_branches": 0,
                 "missing_branches": 0
             },
             "missing_lines": [],
@@ -80,14 +57,14 @@
         }
     },
     "totals": {
-        "covered_lines": 38,
-        "num_statements": 38,
+        "covered_lines": 15,
+        "num_statements": 15,
         "percent_covered": 100.0,
         "missing_lines": 0,
         "excluded_lines": 0,
-        "num_branches": 18,
+        "num_branches": 4,
         "num_partial_branches": 0,
-        "covered_branches": 18,
+        "covered_branches": 4,
         "missing_branches": 0
     }
 }
