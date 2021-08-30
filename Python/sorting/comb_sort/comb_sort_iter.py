@@ -30,7 +30,7 @@ from typing import List, Sequence
 # Space:    : O(1) -> this implementation requires O(n)
 
 
-def iter_comb_sort(seq: Sequence) -> List:
+def comb_sort_iter(seq: Sequence) -> List:
     """
     Sort a sequence with the iterative comb sort algorithm.
 

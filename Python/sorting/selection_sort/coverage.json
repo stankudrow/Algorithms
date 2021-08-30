@@ -1,12 +1,12 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-08-06T16:19:34.833608",
+        "timestamp": "2021-08-30T16:40:52.851880",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "iterative_selection_sort.py": {
+        "selection_sort_iter.py": {
             "executed_lines": [
                 3,
                 6,
@@ -36,7 +36,7 @@
             "missing_lines": [],
             "excluded_lines": []
         },
-        "recursive_selection_sort.py": {
+        "selection_sort_rec.py": {
             "executed_lines": [
                 3,
                 6,

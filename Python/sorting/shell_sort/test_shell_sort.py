@@ -8,7 +8,7 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from iterative_shell_sort import iter_shell_sort as isort
+from shell_sort_iter import shell_sort_iter as isort
 
 
 # pylint: disable=arguments-out-of-order
@@ -27,18 +27,18 @@ def test_single_element_sequence(seq):
     assert isort(seq) == res
 
 
-@mark.parametrize("seq", [[-1, 1], (-2, 0, 2),
-                          "ABCxyz", "1234567",
-                          ([1, 2], [2, 3], [5, 7, 9])])
+@mark.parametrize(
+    "seq", [[-1, 1], (-2, 0, 2), "ABCxyz", "1234567", ([1, 2], [2, 3], [5, 7, 9])]
+)
 def test_sorted_sequences(seq):
     """Sorted sequences."""
     res = list(seq)
     assert isort(seq) == res
 
 
-@mark.parametrize("seq", [[1, 0], (2, -2, 0),
-                          "qwerty", "School42",
-                          ([1, -1], [5, 0, 15, -10])])
+@mark.parametrize(
+    "seq", [[1, 0], (2, -2, 0), "qwerty", "School42", ([1, -1], [5, 0, 15, -10])]
+)
 def test_unsorted_sequences(seq):
     """Unsorted sequences."""
     res = sorted(seq)

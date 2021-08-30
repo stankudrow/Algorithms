@@ -8,8 +8,8 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from iterative_insertion_sort import iter_insertion_sort as isort
-from recursive_insertion_sort import rec_insertion_sort as rsort
+from insertion_sort_iter import insertion_sort_iter as isort
+from insertion_sort_rec import insertion_sort_rec as rsort
 
 
 # pylint: disable=arguments-out-of-order
@@ -30,9 +30,9 @@ def test_single_element_sequence(seq):
     assert rsort(seq) == res
 
 
-@mark.parametrize("seq", [[-1, 1], (-2, 0, 2),
-                          "ABCxyz", "1234567",
-                          ([1, 2], [2, 3], [5, 7, 9])])
+@mark.parametrize(
+    "seq", [[-1, 1], (-2, 0, 2), "ABCxyz", "1234567", ([1, 2], [2, 3], [5, 7, 9])]
+)
 def test_sorted_sequences(seq):
     """Sorted sequences."""
     res = list(seq)
@@ -40,9 +40,9 @@ def test_sorted_sequences(seq):
     assert rsort(seq) == res
 
 
-@mark.parametrize("seq", [[1, 0], (2, -2, 0),
-                          "qwerty", "School42",
-                          ([1, -1], [5, 0, 15, -10])])
+@mark.parametrize(
+    "seq", [[1, 0], (2, -2, 0), "qwerty", "School42", ([1, -1], [5, 0, 15, -10])]
+)
 def test_unsorted_sequences(seq):
     """Unsorted sequences."""
     res = sorted(seq)

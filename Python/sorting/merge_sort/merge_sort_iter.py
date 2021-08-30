@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The merge sort algorithm."""
+"""The iterative merge sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -22,9 +22,10 @@ from merge import merge
 # This link provided some insights:
 # https://www.techiedelight.com/iterative-merge-sort-algorithm-bottom-up/
 
-def iter_merge_sort(seq: Sequence) -> List:
+
+def merge_sort_iter(seq: Sequence) -> List:
     """
-    Sort a sequence with the iterative insertion sort algorithm.
+    Sort a sequence with the iterative merge sort algorithm.
 
     Parameters
     ----------
@@ -42,7 +43,7 @@ def iter_merge_sort(seq: Sequence) -> List:
         for lbound in range(0, length, 2 * size):
             start: int = lbound
             mid: int = start + size
-            end: int = min(start + 2*size, length)
+            end: int = min(start + 2 * size, length)
             mseq[start:end] = merge(mseq[start:mid], mseq[mid:end])
         size *= 2
     return mseq

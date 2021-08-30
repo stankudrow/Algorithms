@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The selection sort test module."""
+"""The Hoare quick sort test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -8,8 +8,7 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from selection_sort_iter import selection_sort_iter as isort
-from selection_sort_rec import selection_sort_rec as rsort
+from quick_sort_rec import quick_sort_rec as rsort
 
 
 # pylint: disable=arguments-out-of-order
@@ -18,7 +17,6 @@ from selection_sort_rec import selection_sort_rec as rsort
 @mark.parametrize("seq, res", [([], []), ("", []), ((), [])])
 def test_empty_sequences(seq, res):
     """Empty sequences."""
-    assert isort(seq) == res
     assert rsort(seq) == res
 
 
@@ -26,7 +24,6 @@ def test_empty_sequences(seq, res):
 def test_single_element_sequence(seq):
     """Single element sequences."""
     res = list(seq)
-    assert isort(seq) == res
     assert rsort(seq) == res
 
 
@@ -36,7 +33,6 @@ def test_single_element_sequence(seq):
 def test_sorted_sequences(seq):
     """Sorted sequences."""
     res = list(seq)
-    assert isort(seq) == res
     assert rsort(seq) == res
 
 
@@ -46,7 +42,6 @@ def test_sorted_sequences(seq):
 def test_unsorted_sequences(seq):
     """Unsorted sequences."""
     res = sorted(seq)
-    assert isort(seq) == res
     assert rsort(seq) == res
 
 
@@ -55,5 +50,4 @@ def test_unsorted_sequences(seq):
 )
 def test_nonsequences(nonseq):
     """Non-sequences."""
-    assert isort(nonseq)
     assert rsort(nonseq)

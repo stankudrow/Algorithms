@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The iterative selection sort algorithm."""
+"""The iterative insertion sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -14,9 +14,9 @@ from typing import List, Sequence
 # Space:    : O(1) -> this implementation requires O(n)
 
 
-def iter_selection_sort(seq: Sequence) -> List:
+def insertion_sort_iter(seq: Sequence) -> List:
     """
-    Sort a sequence with the iterative selection sort algorithm.
+    Sort a sequence with the iterative insertion sort algorithm.
 
     Parameters
     ----------
@@ -29,10 +29,11 @@ def iter_selection_sort(seq: Sequence) -> List:
     """
     lst: List = list(seq)
     size: int = len(seq)
-    for i in range(size):
-        key: int = i
-        for j in range(i + 1, size):
-            if lst[j] < lst[key]:
-                key = j
-        lst[i], lst[key] = lst[key], lst[i]
+    for i in range(1, size):
+        key = lst[i]
+        j: int = i - 1
+        while (j >= 0) and (lst[j] > key):
+            lst[j + 1] = lst[j]
+            j -= 1
+        lst[j + 1] = key
     return lst

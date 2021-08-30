@@ -14,7 +14,7 @@ from typing import List, Sequence
 # Space:    : O(1) -> this implementation requires O(n)
 
 
-def iter_bubble_sort(seq: Sequence) -> List:
+def bubble_sort_iter(seq: Sequence) -> List:
     """
     Sort a sequence with the iterative bubble sort algorithm.
 

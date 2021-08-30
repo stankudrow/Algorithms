@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""The merge sort algorithm module."""
+"""The recursive merge sort algorithm."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -16,7 +16,7 @@ from merge import merge
 # Space     : O(n)
 
 
-def rec_merge_sort(seq: Sequence) -> List:
+def merge_sort_rec(seq: Sequence) -> List:
     """
     Sort a sequence with the recursive merge sort algorithm.
 
@@ -35,4 +35,4 @@ def rec_merge_sort(seq: Sequence) -> List:
     half: int = length // 2
     left: Sequence = seq[:half]
     right: Sequence = seq[half:]
-    return merge(rec_merge_sort(left), rec_merge_sort(right))
+    return merge(merge_sort_rec(left), merge_sort_rec(right))

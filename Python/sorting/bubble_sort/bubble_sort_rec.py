@@ -14,7 +14,7 @@ from typing import List, Sequence
 # Space:    : O(n)
 
 
-def rec_bubble_sort(seq: Sequence) -> List:
+def bubble_sort_rec(seq: Sequence) -> List:
     """
     Sort a sequence with the recursive bubble sort algorithm.
 

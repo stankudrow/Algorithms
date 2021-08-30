@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-The iterative shell sort algorithm.
+The iterative Shell sort algorithm.
 
 The Shell sort algorithm was invented by Donald Shell in 1959.
 
 Notes
 -----
-    The shell sort is a generalisation of the insertion sort (1-gap) algorithm.
+    The Shell sort is a generalisation of the insertion sort (1-gap) algorithm.
 
 References
 ----------
@@ -29,7 +29,7 @@ from typing import List, Sequence
 # Space:    : O(1) -> this implementation requires O(n)
 
 
-def iter_shell_sort(seq: Sequence) -> List:
+def shell_sort_iter(seq: Sequence) -> List:
     """
     Sort a sequence with the Shell sort algorithm.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Bubble sort test module."""
+"""The bubble sort test module."""
 
 
 __author__ = "Stanislav D. Kudriavtsev"
@@ -8,8 +8,8 @@ __author__ = "Stanislav D. Kudriavtsev"
 
 from pytest import mark, param
 
-from iterative_bubble_sort import iter_bubble_sort as isort
-from recursive_bubble_sort import rec_bubble_sort as rsort
+from bubble_sort_iter import bubble_sort_iter as isort
+from bubble_sort_rec import bubble_sort_rec as rsort
 
 
 # pylint: disable=arguments-out-of-order
@@ -30,9 +30,9 @@ def test_single_element_sequence(seq):
     assert rsort(seq) == res
 
 
-@mark.parametrize("seq", [[-1, 1], (-2, 0, 2),
-                          "ABCxyz", "1234567",
-                          ([1, 2], [2, 3], [5, 7, 9])])
+@mark.parametrize(
+    "seq", [[-1, 1], (-2, 0, 2), "ABCxyz", "1234567", ([1, 2], [2, 3], [5, 7, 9])]
+)
 def test_sorted_sequences(seq):
     """Sorted sequences."""
     res = list(seq)
@@ -40,9 +40,9 @@ def test_sorted_sequences(seq):
     assert rsort(seq) == res
 
 
-@mark.parametrize("seq", [[1, 0], (2, -2, 0),
-                          "qwerty", "School42",
-                          ([1, -1], [5, 0, 15, -10])])
+@mark.parametrize(
+    "seq", [[1, 0], (2, -2, 0), "qwerty", "School42", ([1, -1], [5, 0, 15, -10])]
+)
 def test_unsorted_sequences(seq):
     """Unsorted sequences."""
     res = sorted(seq)

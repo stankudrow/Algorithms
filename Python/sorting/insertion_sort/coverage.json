@@ -1,12 +1,12 @@
 {
     "meta": {
         "version": "5.5",
-        "timestamp": "2021-08-06T16:23:19.458778",
+        "timestamp": "2021-08-30T16:53:40.427381",
         "branch_coverage": true,
         "show_contexts": false
     },
     "files": {
-        "iterative_insertion_sort.py": {
+        "insertion_sort_iter.py": {
             "executed_lines": [
                 3,
                 6,
@@ -37,7 +37,7 @@
             "missing_lines": [],
             "excluded_lines": []
         },
-        "recursive_insertion_sort.py": {
+        "insertion_sort_rec.py": {
             "executed_lines": [
                 3,
                 6,

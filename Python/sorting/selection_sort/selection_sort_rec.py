@@ -14,7 +14,7 @@ from typing import List, Sequence
 # Space:    : O(n)
 
 
-def rec_selection_sort(seq: Sequence) -> List:
+def selection_sort_rec(seq: Sequence) -> List:
     """
     Sort a sequence with the recursive selection sort algorithm.
 

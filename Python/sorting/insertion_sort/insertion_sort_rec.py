@@ -14,7 +14,7 @@ from typing import List, Sequence
 # Space:    : O(n)
 
 
-def rec_insertion_sort(seq: Sequence) -> List:
+def insertion_sort_rec(seq: Sequence) -> List:
     """
     Sort a sequence with the recursive insertion sort algorithm.
 

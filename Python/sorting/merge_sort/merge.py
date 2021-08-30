@@ -26,7 +26,7 @@ def merge(seq1: Sequence, seq2: Sequence) -> List:
 
     Returns
     -------
-    Sequence
+    List
 
     """
     ind1: int = 0
