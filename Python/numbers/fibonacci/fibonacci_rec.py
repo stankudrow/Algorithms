@@ -16,11 +16,15 @@ from typing import Dict
 
 
 # a canonical way is to use functools.lru_cache
-def fib_rec(nth: int) -> int:
+def fibonacci_rec(nth: int) -> int:
     """
-    Return the Fibonacci generator.
+    Return the nth Fibonacci number.
 
     The first Fibonacci number is zero, the second is one and so forth.
+
+    Notes
+    -----
+    	the algorithm is recursive with memoisation.
 
     Parameters
     ----------
